@@ -21,12 +21,12 @@ mongoose.connect(MONGODB_URI, {
 });
 
 // Middleware
-app.use(express.json());
 app.use(cors({
-  origin: ['sagar-wheather-aap.netlify.app', 'http://localhost:5173', 'http://localhost:3000'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+    origin: '*', 
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
+
 
 // Weather Data Model
 const WeatherData = mongoose.model('WeatherData', {
